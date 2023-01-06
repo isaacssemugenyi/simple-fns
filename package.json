@@ -3,11 +3,22 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "test.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isaacssemugenyi/js-fns.git"
   },
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "array",
+    "object",
+    "number",
+    "string",
+    "boolean",
+    "regex"
+  ],
+  "author": "Isaac Ssemugenyi <isaacpro01@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.3.1"
