@@ -1,5 +1,8 @@
 Manupilate strings of all types to get desired output
 
+[![npm](https://img.shields.io/npm/v/simple-fns)]
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.1.1)]
+
 - Usage
   - [splitText](#splittext)
   - [countOccurance](#countoccurance)
