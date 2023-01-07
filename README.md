@@ -1,7 +1,8 @@
 Manupilate strings of all types to get desired output
 
 ![npm](https://img.shields.io/npm/v/simple-fns)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.1.1)
+![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.1.2)
+![licence (MIT)](https://img.shields.io/npm/l/simple-fns)
 
 - Usage
   - [splitText](#splittext)
@@ -12,11 +13,11 @@ Manupilate strings of all types to get desired output
 import the js-fns library
 
 ```js
-const { splitText, countOccurance } = require('js-fns');
+const { splitText, countOccurance } = require('simple-fns');
 
 // or
 
-const jsFns = require('js-fns');
+const jsFns = require('simple-fns');
 ```
 
 ### splitText
