@@ -168,3 +168,8 @@ Count the number of times a character occurs in a string
   const result5 = countOccurance('boy , girl , kid , child', 4, '/');
   // result5 -> 0
   ```
+
+  #### Note
+
+  - Added type definitions on version `0.1.0`, if you experience any issue, run`npm i simple-fns@0.0.1` to install a previous version without types
+  - As well raise an issue [here](https://github.com/isaacssemugenyi/simple-fns/issues)
