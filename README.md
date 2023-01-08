@@ -1,7 +1,7 @@
 Manupilate strings of all types to get desired output
 
 ![npm](https://img.shields.io/npm/v/simple-fns)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.2.0)
+![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.2.1)
 ![licence (MIT)](https://img.shields.io/npm/l/simple-fns)
 
 - Usage
@@ -181,6 +181,8 @@ Count the number of times a character occurs in a string
   Combine two objects in different arrays using their shared identifier
 
 ```js
+"with 'd' specified, you indicate that you want 'my_id' as a key to be deleted from the returned array objects";
+
 const result1 = mergeObjects(
   [{ id: 1, name: 'Isaac', age: 20 }],
   [{ my_id: 1, address: 'Kampala' }],
@@ -247,42 +249,40 @@ const result1 = injectDupObj(
 );
 // lookupKey is optional, if not give, the inner array will have 'lookup' as its key
 // output
-/**
- *[
- * {
- *  id: 1,
- *  name: 'john1',
- *  age: 30,
- *  courses: [
- *    { id: 1, user_id: 1, course: 'SST' },
- *    { id: 3, user_id: 1, course: 'Science' },
- *    { id: 8, user_id: 1, course: 'Christianity' },
- *  ],
- *},
- *{
- *  id: 2,
- *  name: 'john2',
- *  age: 30,
- *  courses: [
- *    { id: 2, user_id: 2, course: 'English' },
- *    { id: 4, user_id: 2, course: 'Luganda' },
- *  ],
- *},
- *{
- *  id: 3,
- *  name: 'john3',
- *  age: 30,
- *  courses: [{ id: 5, user_id: 3, course: 'Runyankole' }],
- *},
- *{
- *  id: 4,
- *  name: 'john4',
- *  age: 30,
- *  courses: [{ id: 6, user_id: 4, course: 'Swahili' }],
- *},
- *{ id: 5, name: 'john5', age: 30 }
- *];
- */
+[
+  {
+    id: 1,
+    name: 'john1',
+    age: 30,
+    courses: [
+      { id: 1, user_id: 1, course: 'SST' },
+      { id: 3, user_id: 1, course: 'Science' },
+      { id: 8, user_id: 1, course: 'Christianity' },
+    ],
+  },
+  {
+    id: 2,
+    name: 'john2',
+    age: 30,
+    courses: [
+      { id: 2, user_id: 2, course: 'English' },
+      { id: 4, user_id: 2, course: 'Luganda' },
+    ],
+  },
+  {
+    id: 3,
+    name: 'john3',
+    age: 30,
+    courses: [{ id: 5, user_id: 3, course: 'Runyankole' }],
+  },
+  {
+    id: 4,
+    name: 'john4',
+    age: 30,
+    courses: [{ id: 6, user_id: 4, course: 'Swahili' }],
+  },
+  { id: 5, name: 'john5', age: 30 },
+];
 ```
 
 #### Note
