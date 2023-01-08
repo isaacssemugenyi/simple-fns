@@ -16,7 +16,8 @@
     "number",
     "string",
     "boolean",
-    "regex"
+    "regex",
+    "merge objects"
   ],
   "author": {
     "name": "Isaac Ssemugenyi",

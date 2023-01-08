@@ -1,12 +1,15 @@
 Manupilate strings of all types to get desired output
 
 ![npm](https://img.shields.io/npm/v/simple-fns)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.1.2)
+![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/simple-fns/0.2.0)
 ![licence (MIT)](https://img.shields.io/npm/l/simple-fns)
 
 - Usage
   - [splitText](#splittext)
   - [countOccurance](#countoccurance)
+  - [mergeObjects](#mergeobjects)
+  - [injectDupObj](#injectdupobj)
+  - [transformList](https://www.npmjs.com/package/transform-array-list)
 
 ## Usage
 
@@ -173,7 +176,116 @@ Count the number of times a character occurs in a string
   // result5 -> 0
   ```
 
-  #### Note
+  ### mergeObjects
 
-  - Added type definitions on version `0.1.0`, if you experience any issue, run`npm i simple-fns@0.0.1` to install a previous version without types
-  - As well raise an issue [here](https://github.com/isaacssemugenyi/simple-fns/issues)
+  Combine two objects in different arrays using their shared identifier
+
+```js
+const result1 = mergeObjects(
+  [{ id: 1, name: 'Isaac', age: 20 }],
+  [{ my_id: 1, address: 'Kampala' }],
+  'id',
+  'my_id',
+  'd'
+);
+
+// output -> [{id: 1, name: 'Isaac', age: 20, address: 'Kampala'}]
+
+const result2 = mergeObjects(
+  [{ id: 1, name: 'Isaac', age: 20 }],
+  [{ my_id: 1, address: 'Kampala' }],
+  'id',
+  'my_id'
+);
+
+// output -> [{id: 1, name: 'Isaac', age: 20, my_id: 1, address: 'Kampala'}]
+
+const result3 = mergeObjects(
+  [{ id: 1, name: 'Isaac', age: 20 }],
+  [{ id: 1, address: 'Kampala' }],
+  'id',
+  'id'
+);
+// output -> [{id: 1, name: 'Isaac', age: 20, address: 'Kampala'}]
+
+const result4 = mergeObjects(
+  [{ id: 1, name: 'Isaac', age: 20 }],
+  [{ id: 1, address: 'Kampala' }],
+  'id',
+  'id',
+  'd'
+);
+// output -> [{'Isaac', age: 20, address: 'Kampala'}]
+```
+
+### injectDupObj
+
+Inject objects from one array with duplicate id into the main array
+
+```js
+const result1 = injectDupObj(
+  [
+    { id: 1, name: 'john1', age: 30 },
+    { id: 2, name: 'john2', age: 30 },
+    { id: 3, name: 'john3', age: 30 },
+    { id: 4, name: 'john4', age: 30 },
+    { id: 5, name: 'john5', age: 30 },
+  ],
+  [
+    { id: 1, user_id: 1, course: 'SST' },
+    { id: 2, user_id: 2, course: 'English' },
+    { id: 3, user_id: 1, course: 'Science' },
+    { id: 8, user_id: 1, course: 'Christianity' },
+    { id: 4, user_id: 2, course: 'Luganda' },
+    { id: 5, user_id: 3, course: 'Runyankole' },
+    { id: 6, user_id: 4, course: 'Swahili' },
+    { id: 7, user_id: 7, course: 'Luo' },
+  ],
+  'id',
+  'user_id',
+  'courses'
+);
+// lookupKey is optional, if not give, the inner array will have 'lookup' as its key
+// output
+/**
+ *[
+ * {
+ *  id: 1,
+ *  name: 'john1',
+ *  age: 30,
+ *  courses: [
+ *    { id: 1, user_id: 1, course: 'SST' },
+ *    { id: 3, user_id: 1, course: 'Science' },
+ *    { id: 8, user_id: 1, course: 'Christianity' },
+ *  ],
+ *},
+ *{
+ *  id: 2,
+ *  name: 'john2',
+ *  age: 30,
+ *  courses: [
+ *    { id: 2, user_id: 2, course: 'English' },
+ *    { id: 4, user_id: 2, course: 'Luganda' },
+ *  ],
+ *},
+ *{
+ *  id: 3,
+ *  name: 'john3',
+ *  age: 30,
+ *  courses: [{ id: 5, user_id: 3, course: 'Runyankole' }],
+ *},
+ *{
+ *  id: 4,
+ *  name: 'john4',
+ *  age: 30,
+ *  courses: [{ id: 6, user_id: 4, course: 'Swahili' }],
+ *},
+ *{ id: 5, name: 'john5', age: 30 }
+ *];
+ */
+```
+
+#### Note
+
+- Added type definitions on version `0.1.0`, if you experience any issue, run`npm i simple-fns@0.0.1` to install a previous version without types
+- As well raise an issue [here](https://github.com/isaacssemugenyi/simple-fns/issues)
